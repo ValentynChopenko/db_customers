@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}CUSTOMERS_INFO{% endblock title %}
+
+{% block content %}
+    <h1>CUSTOMERS_INFO</h1>
+    <table border = 1>
+        <thead>
+            <td>CustomerId</td>
+            <td>FirstName</td>
+            <td>LastName</td>
+            <td>Company</td>
+            <td>Address</td>
+            <td>City</td>
+            <td>State</td>
+            <td>Country</td>
+            <td>PostalCode</td>
+            <td>Phone</td>
+            <td>Fax</td>
+            <td>Email</td>
+            <td>SupportRepld</td>
+        </thead>
+
+    {% for customer in context %}
+        <tr>
+            {% for row in customer %}
+                <td>{{ row }}</td>
+            {% endfor %}
+        </tr>
+    {% endfor %}
+    </table>
+
+{% endblock content %}
