@@ -43,5 +43,5 @@ def get_filter_db(country='%', state='%', city='%'):
     answer = exec_query(query)
     return answer
 
-#test status = '3243254'
+
 # clipit
