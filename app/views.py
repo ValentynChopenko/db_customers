@@ -1,6 +1,5 @@
 from flask import render_template
 from flask import request
-from app.utils import id_generator
 from app.utils import ask_all_customers_info
 from app.utils import ask_customer_by_id
 from app.utils import ask_customers_by_phone
@@ -9,14 +8,6 @@ from app.utils import get_filter_db
 
 def index():
     return render_template('index.html')
-
-def gen_pass(pass_len, pass_count):
-    context = {
-        "passwords": [id_generator(pass_len) for i in range(pass_count)],
-        "pass_len": pass_len,
-        "pass_count": pass_count,
-    }
-    return render_template('passwords.html', context = context)
 
 def all_customers():
     context = ask_all_customers_info()
